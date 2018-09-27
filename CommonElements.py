@@ -3,12 +3,20 @@ input: two lists of any size and one empty list
 Return: two lists are checked and common elements from the list are appended to output list
 '''
 def comElems(list1, list2, output):
-    for number in list1:
-        if number in list2:
-            output.append(number)
-    
-list1 = [3, 4, 424, 23, 515, 7, 88, 45, 46]
-list2 = [4, 4334, 6626, 23, 231515, 463, 42141, 231315, 7477, 234, 45]
+    i = 0
+    j = 0
+    while (i < len(list1) and j < len(list2)):
+        if (list1[i] > list2[j]):
+            j+=1
+        elif (list1[i] < list2[j]):
+            i+=1
+        else:
+            output.append(list1[i])
+            i+=1
+            j+=1
+            
+list1 = [2, 5, 5, 5, 15]
+list2 = [2, 2, 3, 5, 5, 7, 15, 20]
 output = list()
 comElems(list1, list2, output)
 print(output)
