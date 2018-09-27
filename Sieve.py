@@ -4,7 +4,7 @@ Finds Prime Numbers 2 - n and stores them in a list
 '''
 
 
-def sievePimes(n: int) -> list:
+def sievePrimes(n: int) -> list:
     primeList = []
     for h in range(2, n):
         primeList.append(h)
@@ -13,6 +13,5 @@ def sievePimes(n: int) -> list:
             k = i * j
             if k in primeList:
                 primeList.remove(k)
-    print(primeList)
     return primeList
 
