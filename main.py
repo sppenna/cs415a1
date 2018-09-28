@@ -86,8 +86,6 @@ while i < 5:
         list2.append(rand.randint(1,100))
         y+=1
     #sort both lists in ascending order
-    print("list1 size", len(list1))
-    print("list2 size", len(list2))
     list1.sort()
     list2.sort()
     #add the max of list1 and list2 to xaxis
