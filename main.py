@@ -57,6 +57,7 @@ fibList = fib(i)
 fibEuclid = []
 xaxis = []
 n = 5
+#test worst case Euclids algorithm on each consecutive Fibonacci sequence
 while n < i-1:
     xaxis.append(n)
     count = 0
