@@ -12,7 +12,7 @@ import random as rand
 n, x = 5, 1
 euclidAvg = []
 xaxis = []
-while n < 51:
+while n < 100:
     xaxis.append(n)
     i = 1
     count = 0
@@ -22,19 +22,15 @@ while n < 51:
         i+=1
         count = 0
     euclidAvg.append(float(sum(tmp))/float(len(tmp)))
-    n+=5
+    n+=1
 #This is the average number of % for Euclids
-print("euclidGCD:", euclidAvg)
-plt.scatter(xaxis, euclidAvg)
-plt.title("Euclid's Algorithm Average")
-plt.show()
 
 #consecutive integer
 
 n, x = 5, 1
 consAvg = []
 xaxis = []
-while n < 51:
+while n < 100:
     xaxis.append(n)
     i = 1
     count = 0
@@ -44,20 +40,23 @@ while n < 51:
         count = 0
         i+=1
     consAvg.append(float(sum(tmp))/float(len(tmp)))
-    n+=5
+    n+=1
 #This is the average number of % for Euclids
-print("ConsecutiveIntegerGCD:", consAvg)
-plt.scatter(xaxis, consAvg)
-plt.title("Consecutive Integer Average")
+#print("euclidGCD:", euclidAvg)
+#print("ConsecutiveIntegerGCD:", consAvg)
+plt.title("GCD (Euclid vs Consecutive Integer)")
+plt.scatter(xaxis, euclidAvg, label="Euclid's")
+plt.scatter(xaxis, consAvg, label="Consecutive Int")
+plt.legend()
 plt.show()
 
 #generate fibonacci sequence of size 20
-i = 20
+i = 100
 fibList = fib(i)
 #print(fibList)
 fibEuclid = []
 xaxis = []
-n = 5
+n = 1
 #test worst case Euclids algorithm on each consecutive Fibonacci sequence
 while n < i-1:
     xaxis.append(n)
@@ -74,7 +73,7 @@ plt.show()
 i = 0
 list1, list2, output, numIters, xaxisGamma, xaxisBigO = [], [], [], [], [], []
 
-while i < 5:
+while i < 100:
     n = rand.randint(1, 10)
     m = rand.randint(1, 10)
     j, y, count = 0, 0, 0
