@@ -21,5 +21,5 @@ while i < n+1:
 #This is the average number of % for Euclids
 print(euclidAvg)
 xaxis = [1, 2, 3, 4, 5]
-plt.plot(xaxis, euclidAvg, 'test')
+plt.scatter(xaxis, euclidAvg, 'k')
 plt.savefig('test.png', dpi=100)
