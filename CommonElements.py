@@ -6,7 +6,7 @@ def comElems(list1, list2, output, count):
     i = 0
     j = 0
     while (i < len(list1) and j < len(list2)):
-        count += 1
+        count+=1
         if (list1[i] > list2[j]):
             j+=1
         elif (list1[i] < list2[j]):

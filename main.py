@@ -72,25 +72,34 @@ plt.show()
 
 #demonstrate complexity of finding common elements
 i = 0
-list1, list2, output, numIters, xaxis = [], [], [], [], []
+list1, list2, output, numIters, xaxisGamma, xaxisBigO = [], [], [], [], [], []
 
 while i < 5:
-    n = rand.randint(1, 20)
-    j, count = 0, 0
+    n = rand.randint(1, 10)
+    m = rand.randint(1, 10)
+    j, y, count = 0, 0, 0
     #generate 2 lists of n size full of random numbers
     while j < n:
         list1.append(rand.randint(1,100))
-        list2.append(rand.randint(1,100))
         j+=1
+    while y < m:
+        list2.append(rand.randint(1,100))
+        y+=1
     #sort both lists in ascending order
-    list1, list2 = (list(x) for x in zip(*sorted(zip(list1, list2), key=lambda pair: pair[0])))
-    #add the size of the two lists to the xaxis
-    xaxis.append(len(list1) + len(list2))
+    print("list1 size", len(list1))
+    print("list2 size", len(list2))
+    list1.sort()
+    list2.sort()
+    #add the max of list1 and list2 to xaxis
+    xaxisGamma.append(max(len(list1), len(list2)))
+    xaxisBigO.append(len(list1)+len(list2))
     numIters.append(comElems(list1, list2, output, count))
     i+=1
-xaxis.sort()
-print("sizes of list1+list2", xaxis)
-print("number of increments", numIters)
-plt.scatter(xaxis, numIters)
+xaxisBigO.sort()
+xaxisGamma.sort()
+line_mid = plt.scatter(xaxisBigO, numIters, label="Theta")
+line_up = plt.plot(xaxisBigO, xaxisBigO, label="Big O")
+line_down = plt.plot(xaxisBigO, xaxisGamma, label="Gamma")
+plt.legend()
 plt.title("Common Element Finder")
 plt.show()
