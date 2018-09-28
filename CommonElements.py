@@ -19,6 +19,6 @@ list1 = [2, 5, 5, 5, 15]
 list2 = [2, 2, 3, 5, 5, 7, 15, 20]
 output = list()
 comElems(list1, list2, output)
-print(output)
+
 
 
