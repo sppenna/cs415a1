@@ -2,10 +2,11 @@
 input: two lists of any size and one empty list
 Return: two lists are checked and common elements from the list are appended to output list
 '''
-def comElems(list1, list2, output):
+def comElems(list1, list2, output, count):
     i = 0
     j = 0
     while (i < len(list1) and j < len(list2)):
+        count += 1
         if (list1[i] > list2[j]):
             j+=1
         elif (list1[i] < list2[j]):
@@ -14,11 +15,8 @@ def comElems(list1, list2, output):
             output.append(list1[i])
             i+=1
             j+=1
-            
-list1 = [2, 5, 5, 5, 15]
-list2 = [2, 2, 3, 5, 5, 7, 15, 20]
-output = list()
-comElems(list1, list2, output)
+    return count
+
 
 
 

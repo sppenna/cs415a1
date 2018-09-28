@@ -6,6 +6,7 @@ from Euclid import *
 #from Sieve import *
 from fibonacci import *
 import matplotlib.pyplot as plt
+import random as rand
 
 #Testing Average case for Euclid's algorithm size 5
 n, x = 5, 1
@@ -67,4 +68,29 @@ while n < i-1:
 print("Worst Case Euclid's Algorithm:", fibEuclid)
 plt.scatter(xaxis, fibEuclid)
 plt.title("Euclid's Worst Case")
+plt.show()
+
+#demonstrate complexity of finding common elements
+i = 0
+list1, list2, output, numIters, xaxis = [], [], [], [], []
+
+while i < 5:
+    n = rand.randint(1, 20)
+    j, count = 0, 0
+    #generate 2 lists of n size full of random numbers
+    while j < n:
+        list1.append(rand.randint(1,100))
+        list2.append(rand.randint(1,100))
+        j+=1
+    #sort both lists in ascending order
+    list1, list2 = (list(x) for x in zip(*sorted(zip(list1, list2), key=lambda pair: pair[0])))
+    #add the size of the two lists to the xaxis
+    xaxis.append(len(list1) + len(list2))
+    numIters.append(comElems(list1, list2, output, count))
+    i+=1
+xaxis.sort()
+print("sizes of list1+list2", xaxis)
+print("number of increments", numIters)
+plt.scatter(xaxis, numIters)
+plt.title("Common Element Finder")
 plt.show()
