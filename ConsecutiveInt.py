@@ -1,22 +1,21 @@
 
 
-def consecutiveIntegerGCD(m, n):
+def consecutiveIntegerGCD(m, n, count):
     if m == 0:
         print("invalid input")
-        return
+        return count
     elif (n == 0):
         print("invalid input")
-        return
+        return count
     if m < n:
         t = m
     else:
         t = n
-    if m % t == 0 and n % t == 0:
-        return t
 
-    while (m % t != 0 and n % t != 0):
+    while (t > 0):
+        count+=1
         if m % t == 0:
-            return t
             if n % t == 0:
-                return t
-        t = t - 1
+                count+=1
+                return count
+        t-=1
