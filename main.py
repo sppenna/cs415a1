@@ -1,9 +1,7 @@
 from CommonElements import *
 from ConsecutiveInt import *
 from Euclid import *
-#middle school and Sievenot working
-#from MiddleSchool import *
-#from Sieve import *
+from Sieve import *
 from fibonacci import *
 import matplotlib.pyplot as plt
 import random as rand
@@ -53,6 +51,9 @@ plt.scatter(xaxis, consAvg, label="Consecutive Int")
 plt.legend()
 plt.show()
 
+'''
+TASK 2
+'''
 #generate fibonacci sequence of size 20
 i = 100
 fibList = fib(i)
@@ -72,9 +73,26 @@ plt.scatter(xaxis, fibEuclid)
 plt.title("Euclid's Worst Case")
 plt.show()
 
+'''
+TASK 3
+'''
+
+#Generate Prime list
+n = 3
+primeListCount = []
+naxi = []
+while n < 100:
+    naxi.append(n)
+    primeListCount.append(sievePrimes(n, count))
+    n+=1
+
+plt.scatter(naxi, primeListCount)
+plt.title("Prime List Operations")
+plt.show()
+
 #demonstrate complexity of finding common elements
 i = 0
-list1, list2, output, numIters, xaxisGamma, xaxisBigO = [], [], [], [], [], []
+list1, list2, output, numIters, xaxisOmega, xaxisBigO = [], [], [], [], [], []
 
 while i < 100:
     n = rand.randint(1, 100/2)
@@ -91,15 +109,15 @@ while i < 100:
     list1.sort()
     list2.sort()
     #add the max of list1 and list2 to xaxis
-    xaxisGamma.append(max(len(list1), len(list2)))
+    xaxisOmega.append(max(len(list1), len(list2)))
     xaxisBigO.append(len(list1)+len(list2))
     numIters.append(comElems(list1, list2, output, count))
     i+=1
 xaxisBigO.sort()
-xaxisGamma.sort()
+xaxisOmega.sort()
 line_mid = plt.scatter(xaxisBigO, numIters, label="Theta")
 line_up = plt.plot(xaxisBigO, xaxisBigO, label="Big O")
-line_down = plt.plot(xaxisBigO, xaxisGamma, label="Omega")
+line_down = plt.plot(xaxisBigO, xaxisOmega, label="Omega")
 plt.legend()
 plt.title("Common Element Finder")
 plt.show()

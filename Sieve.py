@@ -4,27 +4,18 @@ Finds Prime Numbers 2 - n and stores them in a list
 '''
 
 
-def sievePrimes(n: int) -> list:
+def sievePrimes(n, count):
     """
 
     """
+    count = 0
     primeList = []
-    for h in range(2, n):
+    for h in range(1, n):
         primeList.append(h)
     for i in range(2, n):
         for j in range(i, n):
+            count+=1
             k = i * j
             if k in primeList:
                 primeList.remove(k)
-    return primeList
-'''
-def main():
-    n = 500
-    m =450
-
-    mp = sievePrimes(m)
-    print (mp)
-
-
-main()
-'''
+    return count
