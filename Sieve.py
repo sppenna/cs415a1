@@ -5,6 +5,9 @@ Finds Prime Numbers 2 - n and stores them in a list
 
 
 def sievePrimes(n: int) -> list:
+    """
+
+    """
     primeList = []
     for h in range(2, n):
         primeList.append(h)
@@ -15,3 +18,12 @@ def sievePrimes(n: int) -> list:
                 primeList.remove(k)
     return primeList
 
+def main():
+    n = 500
+    m =450
+
+    mp = sievePrimes(m)
+    print (mp)
+
+
+main()
