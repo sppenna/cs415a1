@@ -67,7 +67,7 @@ while n < i-1:
     fibEuclid.append(euclidGCD(fibList[n+1], fibList[n], count))
     n+=1
 
-print("Worst Case Euclid's Algorithm:", fibEuclid)
+#print("Worst Case Euclid's Algorithm:", fibEuclid)
 plt.scatter(xaxis, fibEuclid)
 plt.title("Euclid's Worst Case")
 plt.show()
@@ -99,7 +99,7 @@ xaxisBigO.sort()
 xaxisGamma.sort()
 line_mid = plt.scatter(xaxisBigO, numIters, label="Theta")
 line_up = plt.plot(xaxisBigO, xaxisBigO, label="Big O")
-line_down = plt.plot(xaxisBigO, xaxisGamma, label="Gamma")
+line_down = plt.plot(xaxisBigO, xaxisGamma, label="Omega")
 plt.legend()
 plt.title("Common Element Finder")
 plt.show()

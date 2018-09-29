@@ -17,7 +17,7 @@ def sievePrimes(n: int) -> list:
             if k in primeList:
                 primeList.remove(k)
     return primeList
-
+'''
 def main():
     n = 500
     m =450
@@ -27,3 +27,4 @@ def main():
 
 
 main()
+'''
