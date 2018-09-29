@@ -8,6 +8,9 @@ from fibonacci import *
 import matplotlib.pyplot as plt
 import random as rand
 
+'''
+TASK 1
+'''
 #Testing Average case for Euclid's algorithm size 5
 n, x = 5, 1
 euclidAvg = []
@@ -74,8 +77,8 @@ i = 0
 list1, list2, output, numIters, xaxisGamma, xaxisBigO = [], [], [], [], [], []
 
 while i < 100:
-    n = rand.randint(1, 10)
-    m = rand.randint(1, 10)
+    n = rand.randint(1, 100/2)
+    m = rand.randint(1, 100/2)
     j, y, count = 0, 0, 0
     #generate 2 lists of n size full of random numbers
     while j < n:
